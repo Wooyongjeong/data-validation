@@ -1,8 +1,10 @@
 package com.innercircle.validation;
 
 import com.innercircle.validation.annotation.Email;
+import com.innercircle.validation.annotation.PhoneNumber;
 import com.innercircle.validation.annotation.ResidentRegistrationNumber;
 import com.innercircle.validation.validator.EmailValidator;
+import com.innercircle.validation.validator.PhoneNumberValidator;
 import com.innercircle.validation.validator.ResidentRegistrationNumberValidator;
 import com.innercircle.validation.validator.Validator;
 
@@ -16,6 +18,7 @@ public class ValidatorManager {
 
     static {
         validators.put(Email.class, new EmailValidator());
+        validators.put(PhoneNumber.class, new PhoneNumberValidator());
         validators.put(ResidentRegistrationNumber.class, new ResidentRegistrationNumberValidator());
     }
 

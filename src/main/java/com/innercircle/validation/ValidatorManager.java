@@ -1,7 +1,9 @@
 package com.innercircle.validation;
 
 import com.innercircle.validation.annotation.Email;
+import com.innercircle.validation.annotation.ResidentRegistrationNumber;
 import com.innercircle.validation.validator.EmailValidator;
+import com.innercircle.validation.validator.ResidentRegistrationNumberValidator;
 import com.innercircle.validation.validator.Validator;
 
 import java.lang.annotation.Annotation;
@@ -14,6 +16,7 @@ public class ValidatorManager {
 
     static {
         validators.put(Email.class, new EmailValidator());
+        validators.put(ResidentRegistrationNumber.class, new ResidentRegistrationNumberValidator());
     }
 
     public static void validate(Object obj) throws IllegalAccessException {

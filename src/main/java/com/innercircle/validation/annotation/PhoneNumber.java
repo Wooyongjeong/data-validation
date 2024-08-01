@@ -9,5 +9,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PhoneNumber {
     String invalidFormatMessage() default "Invalid phone number format";
-    String invalidFieldTypeMessage() default "Field must be String";
 }

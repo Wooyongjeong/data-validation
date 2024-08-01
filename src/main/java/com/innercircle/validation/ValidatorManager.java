@@ -4,6 +4,7 @@ import com.innercircle.validation.annotation.Email;
 import com.innercircle.validation.annotation.IPv6;
 import com.innercircle.validation.annotation.PhoneNumber;
 import com.innercircle.validation.annotation.ResidentRegistrationNumber;
+import com.innercircle.validation.annotation.URL;
 import com.innercircle.validation.validator.*;
 
 import java.lang.annotation.Annotation;
@@ -19,6 +20,7 @@ public class ValidatorManager {
         validators.put(PhoneNumber.class, new PhoneNumberValidator());
         validators.put(ResidentRegistrationNumber.class, new ResidentRegistrationNumberValidator());
         validators.put(IPv6.class, new IPv6Validator());
+        validators.put(URL.class, new UrlValidator());
     }
 
     public static void validate(Object obj) throws IllegalAccessException {

@@ -1,19 +1,22 @@
 package com.innercircle.validation.validator;
 
 import com.innercircle.validation.annotation.PhoneNumber;
+import com.innercircle.validation.annotation.URL;
 import com.innercircle.validation.exception.ValidatorException;
 import com.innercircle.validation.util.StringValidationUtil;
 
 import java.lang.reflect.Field;
 import java.util.regex.Pattern;
 
-public class PhoneNumberValidator implements Validator {
+public class UrlValidator implements Validator {
+
     private static Pattern pattern = null;
+
     @Override
     public void validate(Field field, Object obj) throws ValidatorException, IllegalAccessException {
-        PhoneNumber annotation = field.getAnnotation(PhoneNumber.class);
+        URL annotation = field.getAnnotation(URL.class);
         if(pattern == null) {
-            pattern = Pattern.compile("^(01[016789]-\\d{3,4}-\\d{4}|01[016789]\\d{7,8})$");
+            pattern = Pattern.compile("^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$");
         }
         StringValidationUtil.validate(field, obj, pattern, annotation.invalidFormatMessage());
     }

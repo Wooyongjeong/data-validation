@@ -7,6 +7,6 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface PhoneNumber {
-    String invalidFormatMessage() default "Invalid phone number format";
+public @interface URL {
+    String invalidFormatMessage() default "Invalid URL format";
 }

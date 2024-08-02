@@ -26,6 +26,7 @@ public class ValidatorManager {
         validators.put(MACAddress.class, new MACAddressValidator());
         validators.put(ISBN10.class, new ISBN10Validator());
         validators.put(ISBN13.class, new ISBN13Validator());
+        validators.put(Time.class, new TimeValidator());
     }
 
     public static void validate(Object obj) throws IllegalAccessException {

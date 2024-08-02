@@ -21,6 +21,7 @@ public class ValidatorManager {
         validators.put(CreditCardNumber.class, new CreditCardNumberValidator());
         validators.put(CustomRegex.class, new CustomRegexValidator());
         validators.put(WindowsFilePath.class, new WindowsFilePathValidator());
+        validators.put(UNIXFilePath.class, new UNIXFilePathValidator());
         validators.put(PostalCode.class, new PostalCodeValidator());
         validators.put(MACAddress.class, new MACAddressValidator());
         validators.put(ISBN10.class, new ISBN10Validator());

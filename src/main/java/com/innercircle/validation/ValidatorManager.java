@@ -22,6 +22,7 @@ public class ValidatorManager {
         validators.put(CustomRegex.class, new CustomRegexValidator());
         validators.put(WindowsFilePath.class, new WindowsFilePathValidator());
         validators.put(PostalCode.class, new PostalCodeValidator());
+        validators.put(MACAddress.class, new MACAddressValidator());
     }
 
     public static void validate(Object obj) throws IllegalAccessException {

@@ -15,6 +15,6 @@ public class CreditCardNumberValidator implements Validator {
         if(pattern == null) {
             pattern = Pattern.compile("^(\\d{4}-\\d{4}-\\d{4}-\\d{4}|\\d{16})$");
         }
-        StringValidationUtil.validate(field, obj, pattern, "");
+        StringValidationUtil.validate(field, obj, pattern, annotation.invalidFormatMessage());
     }
 }

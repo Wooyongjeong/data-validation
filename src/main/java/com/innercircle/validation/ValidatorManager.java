@@ -23,6 +23,7 @@ public class ValidatorManager {
         validators.put(WindowsFilePath.class, new WindowsFilePathValidator());
         validators.put(PostalCode.class, new PostalCodeValidator());
         validators.put(MACAddress.class, new MACAddressValidator());
+        validators.put(ISBN10.class, new ISBN10Validator());
     }
 
     public static void validate(Object obj) throws IllegalAccessException {

@@ -18,6 +18,7 @@ public class ValidatorManager {
         validators.put(IPv6.class, new IPv6Validator());
         validators.put(IPv4.class, new IPv4Validator());
         validators.put(URL.class, new UrlValidator());
+        validators.put(PostalCode.class, new PostalCodeValidator());
     }
 
     public static void validate(Object obj) throws IllegalAccessException {

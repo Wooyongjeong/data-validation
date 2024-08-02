@@ -18,6 +18,7 @@ public class ValidatorManager {
         validators.put(IPv6.class, new IPv6Validator());
         validators.put(IPv4.class, new IPv4Validator());
         validators.put(URL.class, new UrlValidator());
+        validators.put(WindowsFilePath.class, new WindowsFilePathValidator());
         validators.put(PostalCode.class, new PostalCodeValidator());
     }
 

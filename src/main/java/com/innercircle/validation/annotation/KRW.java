@@ -8,8 +8,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @BaseValidation(
-        pattern = "^(\\d{4}-\\d{4}-\\d{4}-\\d{4}|\\d{16})$",
-        message = "Invalid credit card number format"
-)
-public @interface CreditCardNumber {
+        pattern = "^(₩|\\d{1,3}(,\\d{3})*)(₩\\d{1,3}(,\\d{3})*)?\\d+원?$",
+        message = "Invalid KRW format")
+public @interface KRW {
 }

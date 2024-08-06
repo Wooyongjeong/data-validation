@@ -7,6 +7,9 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
+@BaseValidation(
+        pattern = "^[a-zA-Z]:\\\\(?:[^\\\\/:*?\"<>|\\r\\n]{1,255}\\\\)*[^\\\\/:*?\"<>|\\r\\n]{1,255}$",
+        message = "Invalid windows file path format"
+)
 public @interface WindowsFilePath {
-    String invalidFormatMessage() default "Invalid windows file path format";
 }

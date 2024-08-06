@@ -7,6 +7,9 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
+@BaseValidation(
+        pattern = "^[0-9]{5}$",
+        message = "Invalid postal code format"
+)
 public @interface PostalCode {
-    String invalidFormatMessage() default "Invalid postal code format";
 }

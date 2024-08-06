@@ -7,6 +7,9 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
+@BaseValidation(
+        pattern = "^(/|~/|\\./|\\.\\./)(([a-zA-Z0-9_-]+/?)|(.{1,2})+/?)*$",
+        message = "Invalid UNIX File Path format"
+)
 public @interface UNIXFilePath {
-    String message() default "Invalid UNIX File Path format.";
 }

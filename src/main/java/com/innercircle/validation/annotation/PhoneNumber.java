@@ -7,6 +7,9 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
+@BaseValidation(
+        pattern = "^(01[016789]-\\d{3,4}-\\d{4}|01[016789]\\d{7,8})$",
+        message = "Invalid phone number format"
+)
 public @interface PhoneNumber {
-    String invalidFormatMessage() default "Invalid phone number format";
 }

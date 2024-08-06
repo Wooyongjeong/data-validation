@@ -7,6 +7,9 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
+@BaseValidation(
+        pattern = "^([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}$",
+        message = "Invalid MAC Address format"
+)
 public @interface MACAddress {
-    String message() default "Invalid MAC Address format.";
 }

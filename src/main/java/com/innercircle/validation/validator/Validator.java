@@ -7,7 +7,11 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 
 public class Validator {
-    public void validate(Object obj) throws ValidatorException, IllegalAccessException {
+    public static void validate(Object obj) throws ValidatorException, IllegalAccessException {
+        if (obj == null) {
+            return;
+        }
+
         for (Field field : obj.getClass().getDeclaredFields()) {
             for (Annotation annotation : field.getAnnotations()) {
                 if (annotation.annotationType().isAnnotationPresent(BaseValidation.class)) {

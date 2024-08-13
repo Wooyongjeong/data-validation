@@ -4,7 +4,9 @@ import com.innercircle.validation.validator.Validator;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ValidationAspect {
     @Pointcut("@within(com.innercircle.validation.annotation.Validate)")
     public void validateAnnotatedClass() {}
